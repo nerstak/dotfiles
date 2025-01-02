@@ -13,13 +13,7 @@ EOF
 git -C {{ .dir }} pull || git clone --depth 1 {{ .repo }} {{ .dir }}
 {{ end -}}
 
-{{ else if eq .chezmoi.os "windows" -}}
-#!/usr/bin/env pwsh
-{{ range .packages.windows.winget -}}
-winget install -e --id {{ . }}
-{{ end -}}
-
-{{ else if eq .chezmoi.osRelease.id "debian" -}}
+{{ else if (and (index .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "debian")) -}}
 #!/bin/bash
 
 sudo apt update

@@ -1,0 +1,6 @@
+{{ if eq .chezmoi.os "windows" -}}
+#!/usr/bin/env pwsh
+{{ range .packages.windows.winget -}}
+winget install -e --id {{ . }}
+{{ end -}}
+{{ end -}}

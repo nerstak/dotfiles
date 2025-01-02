@@ -3,9 +3,11 @@ packages:
     winget:
     - '7zip.7zip'
     - 'Git.Git'
+    - 'Microsoft.PowerToys'
     - 'Mozilla.Firefox'
     - 'Mozilla.Thunderbird.fr'
     - 'VideoLAN.VLC'
+    - 'Neovim.Neovim'
     - 'Yubico.YubikeyManager'
   linux:
     apt: 
