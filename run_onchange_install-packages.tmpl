@@ -10,12 +10,13 @@ cask {{ . | quote }}
 {{ end -}}
 EOF
 
-{{ else if eq .chezmoi.os "windows" }}
+{{ else if eq .chezmoi.os "windows" -}}
+#!/usr/bin/env pwsh
 {{ range .packages.windows.winget -}}
 winget install -e --id {{ . }}
 {{ end -}}
 
-{{ else if eq .osRelease.name "debian" }}
+{{ else if eq .chezmoi.osRelease.id "debian" -}}
 #!/bin/bash
 
 sudo apt update
