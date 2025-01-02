@@ -1,0 +1,31 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range .packages.darwin.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+EOF
+
+{{ else if eq .chezmoi.os "windows" }}
+{{ range .packages.windows.winget -}}
+winget install -e --id {{ . }}
+{{ end -}}
+
+{{ else if eq .osRelease.name "debian" }}
+#!/bin/bash
+
+sudo apt update
+sudo apt upgrade
+{{ range .packages.linux.apt -}}
+sudo apt install {{ . }}
+{{ end -}}
+
+{{ range .zsh }}
+git clone {{ . }}
+{{ end -}}
+
+{{ end -}}

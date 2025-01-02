@@ -1,0 +1,20 @@
+packages:
+  windows:
+    winget:
+    - '7zip.7zip'
+    - 'Git.Git'
+    - 'Mozilla.Firefox'
+    - 'Mozilla.Thunderbird.fr'
+    - 'VideoLAN.VLC'
+    - 'Yubico.YubikeyManager'
+  linux:
+    apt: 
+    - git
+    - curl
+    - vim
+    - zsh
+zsh:
+- 'https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
+- 'https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting'
+- '--depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete'
+- '--depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k'
