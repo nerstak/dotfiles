@@ -2,6 +2,7 @@ packages:
   windows:
     winget:
     - '7zip.7zip'
+    - 'astral-sh.uv'
     - 'Git.Git'
     - 'Microsoft.PowerToys'
     - 'Mozilla.Firefox'
@@ -15,11 +16,14 @@ packages:
     - curl
     - vim
     - zsh
+    curl:
+    - 'https://astral.sh/uv/install.sh'
   darwin:
     brews:
     - git
     - jq
     - neovim
+    - uv
     - yq
     casks:
     - iterm2
