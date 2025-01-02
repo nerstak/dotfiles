@@ -9,6 +9,9 @@ brew {{ . | quote }}
 cask {{ . | quote }}
 {{ end -}}
 EOF
+{{ range .zsh }}
+git -C {{ .dir }} pull || git clone --depth 1 {{ .repo }} {{ .dir }}
+{{ end -}}
 
 {{ else if eq .chezmoi.os "windows" -}}
 #!/usr/bin/env pwsh
@@ -26,7 +29,7 @@ sudo apt install {{ . }}
 {{ end -}}
 
 {{ range .zsh }}
-git clone {{ . }}
+git -C {{ .dir }} pull || git clone --depth 1 {{ .repo }} {{ .dir }}
 {{ end -}}
 
 {{ end -}}
