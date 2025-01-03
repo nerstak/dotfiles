@@ -15,6 +15,7 @@ packages:
     - git
     - curl
     - vim
+    - vlc
     - zsh
     curl:
     - 'https://astral.sh/uv/install.sh'
@@ -33,6 +34,7 @@ packages:
     - notepadnext
     - rectangle
     - scroll-reverser
+    - vlc
 zsh:
 - repo: 'https://github.com/zsh-users/zsh-autosuggestions' 
   dir: '${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
