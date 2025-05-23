@@ -19,6 +19,7 @@ packages:
     - zsh
     curl:
     - 'https://astral.sh/uv/install.sh'
+    - 'https://setup.atuin.sh'
   darwin:
     brews:
     - git
@@ -27,6 +28,7 @@ packages:
     - uv
     - yq
     casks:
+    - atuin
     - iterm2
     - keepassxc
     - maccy

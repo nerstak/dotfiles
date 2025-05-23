@@ -56,6 +56,8 @@ if [[ "$RC_WORK_ENABLE" == "true"  ]]; then
   source "$HOME/.zsh/profiles/zshrc_work.zsh"
 fi
 
+eval "$(atuin init zsh)"
+
 # Cargo
 source "$HOME/.cargo/env"
 
